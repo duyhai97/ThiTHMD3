@@ -40,6 +40,11 @@
     <a href="/product?action=create">Thêm sản phẩm mới</a>
 </h2>
 
+<form action="/product?action=search" method="post">
+    <input type="text" placeholder="Tìm kiếm" name="name">
+    <button>Nhập</button>
+</form>
+
 <table>
     <tr>
         <th>ID </th>

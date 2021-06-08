@@ -14,7 +14,7 @@
 <body>
 
 
-h1>Sửa sanr phaamr</h1>
+<h1>Sửa sanr phaamr</h1>
 <%--<h3><a href="/student">Quay lại</a></h3>--%>
 
 <%--<c:if test='${requestScope["message"] != null}'>--%>

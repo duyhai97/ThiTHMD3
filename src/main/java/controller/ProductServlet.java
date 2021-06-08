@@ -93,8 +93,19 @@ public class ProductServlet extends HttpServlet {
             case "delete":
                 deleteProduct(request,response);
                 break;
+            case "search":
+                searchByName(request,response);
+                break;
 
         }
+    }
+
+    private void searchByName(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String name = request.getParameter("name");
+        Product product = this.productService.search(name);
+        request.setAttribute("product", product);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("product/search.jsp");
+        dispatcher.forward(request,response);
     }
 
     private void deleteProduct(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -107,7 +118,7 @@ public class ProductServlet extends HttpServlet {
 
     }
 
-    private void EditProduct(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    private void EditProduct(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         int id = Integer.parseInt(request.getParameter("id"));
         String name = request.getParameter("name");
         double price = Double.parseDouble(request.getParameter("price"));

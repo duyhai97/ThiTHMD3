@@ -15,4 +15,6 @@ public interface IProductService {
     void edit(int id, Product product);
 
     void delete(int id);
+
+    Product search(String name);
 }
